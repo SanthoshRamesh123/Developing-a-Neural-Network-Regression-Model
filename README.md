@@ -7,7 +7,7 @@ To develop a neural network regression model for the given dataset.
 Explain the problem statement
 
 ## Neural Network Model
-Include the neural network model diagram.
+<img width="1820" height="1017" alt="image" src="https://github.com/user-attachments/assets/f9a3a2e5-462a-49ac-824f-a216c6937fdb" />
 
 ## DESIGN STEPS
 ### STEP 1: 
@@ -43,38 +43,54 @@ Evaluate the model with the testing data.
 Use the trained model to predict  for a new input value .
 
 ## PROGRAM
-
-### Name:
-
-### Register Number:
-
-```python
+```
 class NeuralNet(nn.Module):
     def __init__(self):
         super().__init__()
-        #Include your code here
 
+        self.fc1 = nn.Linear(1, 8)
+        self.fc2 = nn.Linear(8, 10)
+        self.fc3 = nn.Linear(10, 1)
 
+        self.relu = nn.ReLU()
+        self.history = {'loss': []}
 
-# Initialize the Model, Loss Function, and Optimizer
-
+    def forward(self, x):
+        x = self.relu(self.fc1(x))
+        x = self.relu(self.fc2(x))
+        x = self.fc3(x)
+        return x
 
 
 def train_model(ai_brain, X_train, y_train, criterion, optimizer, epochs=2000):
-    #Include your code here
+    for epoch in range(epochs):
+        optimizer.zero_grad()
+        loss=criterion(ai_brain(X_train),y_train)
+        loss.backward()
+        optimizer.step()
+
+
+        ai_brain.history['loss'].append(loss.item())
+        if epoch % 200 == 0:
+            print(f'Epoch [{epoch}/{epochs}], Loss: {loss.item():.6f}')
 
 ```
+### Name:
+SANTHOSH R
+### Register Number:
+212224230249
 
 ### Dataset Information
-Include screenshot of the generated data
+<img width="252" height="287" alt="image" src="https://github.com/user-attachments/assets/51f57d88-488a-4a41-ae4c-ebae7a47cd26" />
 
 ### OUTPUT
+<img width="362" height="230" alt="image" src="https://github.com/user-attachments/assets/39c598a6-a62b-481d-acc2-7e6a96c9c6a3" />
 
 ### Training Loss Vs Iteration Plot
-Include your plot here
+<img width="727" height="568" alt="image" src="https://github.com/user-attachments/assets/15eecd42-2fd1-43a5-913b-af3546f00c1d" />
 
 ### New Sample Data Prediction
-Include your sample input and output here
+<img width="422" height="37" alt="image" src="https://github.com/user-attachments/assets/4b28ee62-8ae9-4692-bb9a-0bd084c6e627" />
 
 ## RESULT
 Thus, a neural network regression model was successfully developed and trained using PyTorch.
