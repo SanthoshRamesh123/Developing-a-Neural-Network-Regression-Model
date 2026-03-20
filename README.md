@@ -5,7 +5,31 @@ To develop a neural network regression model for the given dataset.
 
 ## THEORY
 Explain the problem statement
+Problem Statement: Neural Network Regression Model
 
+In many real-world scenarios, we need to predict continuous numerical values based on input data. Traditional methods like linear regression may fail when relationships between variables are complex and nonlinear.
+
+This is where a Neural Network Regression Model comes in.
+
+ Objective
+
+To design and develop a neural network model that can learn the relationship between input features and a continuous output variable, and accurately predict unseen data.
+
+ Problem Description
+
+Given a dataset with:
+
+Input features (X) → independent variables (e.g., age, salary, temperature, area, etc.)
+
+Target variable (Y) → continuous value (e.g., house price, sales, demand, etc.)
+
+The task is to:
+
+Train a neural network to map inputs to outputs
+
+Minimize prediction error
+
+Generalize well to new/unseen data
 ## Neural Network Model
 <img width="1820" height="1017" alt="image" src="https://github.com/user-attachments/assets/f9a3a2e5-462a-49ac-824f-a216c6937fdb" />
 
